@@ -7,6 +7,7 @@ public class SpriteSelectorController : MonoBehaviour
     [SerializeField] List<Sprite> spritesCatalog = new List<Sprite>();
     SpriteRenderer spriteRenderer;
 
+
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
