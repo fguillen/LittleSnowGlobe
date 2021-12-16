@@ -12,16 +12,9 @@ public class SpriteSelectorController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         spriteRenderer.sprite = RandomSprite();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     Sprite RandomSprite() {
