@@ -7,7 +7,7 @@ public class SnowSpawnerController : MonoBehaviour
 {
     [SerializeField] GameObject snowflakePrefab;
     [SerializeField] float snowflakeEachSeconds = 1f;
-    [SerializeField] Collider2D snowflakesZone;
+    [SerializeField] BoxCollider snowflakesZone;
     float nextSnowFlakeAt;
 
     void Start()
@@ -23,11 +23,8 @@ public class SnowSpawnerController : MonoBehaviour
 
     void SpawnSnowflake()
     {
-        RandomPointInCollider randomPointInCollider = new RandomPointInCollider(snowflakesZone);
-        Vector3 position = randomPointInCollider.RandomPoint();
+        Vector3 position = Utils.RandomPointInCollider(snowflakesZone);
         Instantiate(snowflakePrefab, position, Quaternion.identity, transform);
         nextSnowFlakeAt = Time.time + Utils.AddNoise(snowflakeEachSeconds);
     }
-
-
 }
