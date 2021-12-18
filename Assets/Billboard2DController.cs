@@ -13,6 +13,6 @@ public class Billboard2DController : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.forward = -Camera.main.transform.forward;
+        transform.forward = Camera.main.transform.forward;
     }
 }
