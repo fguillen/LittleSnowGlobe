@@ -30,8 +30,8 @@ public class SnowSpawnerController : MonoBehaviour
     {
         Vector3 position = Utils.RandomPointInCollider(snowflakesZone);
         GameObject snowflake = Instantiate(snowflakePrefab, position, Quaternion.identity, transform);
-        float force = Utils.AddNoise(initialImpulseForce);
-        snowflake.GetComponent<Rigidbody>().AddForce(Vector3.down * force, ForceMode.Impulse);
+        // float force = Utils.AddNoise(initialImpulseForce);
+        // snowflake.GetComponent<Rigidbody>().AddForce(Vector3.down * force, ForceMode.Impulse);
         nextSnowFlakeAt = Time.time + Utils.AddNoise(snowflakeEachSeconds);
     }
 }
